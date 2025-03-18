@@ -12,7 +12,6 @@ def index():
 
 @app.route('/training/<prof>')
 def training(prof):
-    print(prof, 'инженер' in prof.lower())
     if 'инженер' in prof.lower() or 'строитель' in prof.lower():
         prof = 'IT'
     else:
@@ -20,6 +19,28 @@ def training(prof):
 
     return render_template('Tasks/Task1.html', prof=prof)
 
+
+@app.route('/list_prof/<type>')
+def list_prof(type):
+    mas = [
+        'инженер-исследователь',
+        'пилот',
+        'строитель',
+        'экзобиолог',
+        'врач',
+        'инженер по терраформированию',
+        'климатолог',
+        'специалист по радиационной защите',
+        'астрогеолог',
+        'гляциолог',
+        'инженер жизнеобеспечения',
+        'метеоролог',
+        'оператор марсохода',
+        'киберинженер',
+        'штурман',
+        'пилот дронов',
+    ]
+    return render_template('Tasks/Task2.html', type=type, mas=mas)
 
 if __name__ == '__main__':
     app.run(port=8000, host='127.0.0.1')

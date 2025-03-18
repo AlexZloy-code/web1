@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/task.css')}}">
+<div>
+    <h3>Список профессий</h3>
+    {% if type == 'ol' %}
+        <ul>
+            {% for elem in mas %}
+                <li>{{ elem }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <ol>
+            {% for elem in mas %}
+                <li>{{ elem }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</div>
+
+{% endblock %}
