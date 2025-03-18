@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/task.css')}}">
+<div>
+    <h3>
+        {% if prof == 'IT' %}
+            Информациаонные тренажоры
+        {% else %}
+            Научные симуляторы
+        {% endif %}
+    </h3>
+    {% if prof== 'IT' %}
+        <img src="{{url_for('static', filename='image/IT.png')}}">
+    {% else %}
+        <img src="{{url_for('static', filename='image/NS.png')}}">
+    {% endif %}
+</div>
+
+{% endblock %}

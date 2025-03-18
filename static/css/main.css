@@ -1,0 +1,10 @@
+.menu {
+    width: 100%;
+    display:flex;
+    background-color: gray;
+    font-size: 30px;
+    p{
+        margin-left: auto;
+        margin-block: auto;
+    }
+}
