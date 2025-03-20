@@ -42,5 +42,22 @@ def list_prof(type):
     ]
     return render_template('Tasks/Task2.html', type=type, mas=mas)
 
+
+@app.route('/answer')
+@app.route('/auto_answer')
+def answer():
+    return render_template('Tasks/Task3.html', 
+    title='Анкета',
+    surname='Золотой',
+    name='Саня',
+    education='Высшее оконченое',
+    profession='Прогер на Пиииитоне',
+    sex='male',
+    motivation='Хочу найти приключений на 5-ую точку',
+    ready= True
+)
+
+
+
 if __name__ == '__main__':
     app.run(port=8000, host='127.0.0.1')
