@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+
+<img src="{{url_for('static', filename='image/MARS.png')}}">
+<h1>Аварийный доступ</h1>
+<form method="post">
+    <h>ID астронавта</h>
+    <input type="text" class="form-control" id="text" aria-describedby="textHelp" name="ID_astr">
+    <br>
+    <h>Пароль астронавта</h>
+    <input type="password" class="form-control" id="text" aria-describedby="textHelp" name="password_astr">
+    <br>
+    <h>ID капитана</h>
+    <input type="text" class="form-control" id="text" aria-describedby="textHelp" name="ID_cop">
+    <br>
+    <h>Пароль капитана</h>
+    <input type="password" class="form-control" id="text" aria-describedby="textHelp" name="password_cop">
+    <br>
+    <button type="submit" class="btn btn-primary">Доступ</button>
+</form>
+
+        
+{% endblock %}

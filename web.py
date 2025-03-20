@@ -58,6 +58,17 @@ def answer():
 )
 
 
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'GET':
+        return render_template('login_form.html')
+    elif request.method == 'POST':
+        print(request.form['ID_astr'])
+        print(request.form['password_astr'])
+        print(request.form['ID_cop'])
+        print(request.form['password_cop'])
+        return "Форма отправлена"
+
 
 if __name__ == '__main__':
     app.run(port=8000, host='127.0.0.1')
