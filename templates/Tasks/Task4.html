@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/task4.css')}}">
+<div>
+    <h2>Размещение по каютам</h2>
+    {% if not list_of_kocmonaft %}
+        <p>А размещать то некого :((</p>
+    {% else %}
+        {% for name in list_of_kocmonaft %}
+            {% if loop.first %}
+                <p>{{name}} - Каюта №1 - капитан корабля</p>
+            {% else %}
+                <p>{{name}} - Каюта №{{loop.index}}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+    
+{% endblock %}

@@ -68,6 +68,14 @@ def login():
         print(request.form['ID_cop'])
         print(request.form['password_cop'])
         return "Форма отправлена"
+    
+
+@app.route('/distribution')
+def distribution():
+    return render_template('Tasks/Task4.html', list_of_kocmonaft=['Кто-то 1', 'Кто-то 1', 'Я хочу быть капитаном', 'Кто-то 20'])
+    return render_template('Tasks/Task4.html', list_of_kocmonaft=[])
+    return render_template('Tasks/Task4.html', list_of_kocmonaft=['Только капитан...'])
+    
 
 
 if __name__ == '__main__':
