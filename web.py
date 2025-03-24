@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-
+import random
 
 app = Flask(__name__)
 
@@ -73,9 +73,20 @@ def login():
 @app.route('/distribution')
 def distribution():
     return render_template('Tasks/Task4.html', list_of_kocmonaft=['Кто-то 1', 'Кто-то 1', 'Я хочу быть капитаном', 'Кто-то 20'])
-    return render_template('Tasks/Task4.html', list_of_kocmonaft=[])
-    return render_template('Tasks/Task4.html', list_of_kocmonaft=['Только капитан...'])
-    
+
+
+@app.route('/table/<pol>/<int:age>')
+def table(pol, age):
+    if pol == 'male':
+        r = g = random.randint(0, 50)
+        color = color = f'#{hex(r)[2:]}{hex(g)[2:]}FF'
+    elif pol == 'female':
+        g = b = random.randint(0, 78)
+        color = f'#FF{hex(g)[2:]}{hex(b)[2:]}'
+    else:
+        r = b = random.randint(0, 116)
+        color = f'#{hex(r)[2:]}FF{hex(b)[2:]}'
+    return render_template('Tasks/Task5.html', age=(age < 21), color=color)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/task5.css')}}">
+<div>
+    <h2>Размещение по каютам</h2>
+    <table>
+        <tr>
+            <th>Цвет стен</th>
+            <th>Эмблема</th>
+        </tr>
+        <tr>
+            <td style="background-color: {{color}};"></td>
+            <td>
+                {% if age %}
+                    <img src="{{url_for('static', filename='image/kind.png')}}"> 
+                {% else %}
+                    <img src="{{url_for('static', filename='image/no_kind.png')}}"> 
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</div>
+    
+{% endblock %}

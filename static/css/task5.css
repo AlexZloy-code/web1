@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+}
+td{
+    width: 50%;
+}
+img{
+    width: 100%;
+}
+th{
+    background-color: gray;
+    text-align: center;
+}
