@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
+
+import os
 import random
 
 app = Flask(__name__)
@@ -87,6 +89,18 @@ def table(pol, age):
         r = b = random.randint(0, 116)
         color = f'#{hex(r)[2:]}FF{hex(b)[2:]}'
     return render_template('Tasks/Task5.html', age=(age < 21), color=color)
+
+
+@app.route('/galery', methods=['POST', 'GET'])
+def galery():
+    imgs = [url_for('static', filename = f'image/galery/{i}') for i in list(filter(lambda x: 'jpg' in x or 'png' in x, os.listdir('static/image/galery')))]
+    if request.method == 'GET':
+        return render_template('Tasks/Task6.html', imgs=imgs)
+    elif request.method == 'POST':
+        f = request.files['file']
+        path = os.path.join('static/image/galery', f.filename)
+        f.save(path)
+        return app.redirect('/galery')
 
 
 if __name__ == '__main__':
