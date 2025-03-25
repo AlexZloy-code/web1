@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for
 
 import os
 import random
+import json
 
 app = Flask(__name__)
 
@@ -101,6 +102,13 @@ def galery():
         path = os.path.join('static/image/galery', f.filename)
         f.save(path)
         return app.redirect('/galery')
+
+
+@app.route('/member')
+def member():
+    with open('templates/members.json', 'r', encoding='utf8') as f:
+        members = json.load(f)['members']
+    return render_template('Tasks/Task7.html', members=members)
 
 
 if __name__ == '__main__':

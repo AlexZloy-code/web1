@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "name": "Ридли",
+      "surname": "Скотт",
+      "image_path": "image/Inoprishilenec/robot.png",
+      "professions": [
+        "киберинженер",
+        "пилот",
+        "врач"
+      ]
+    },
+    {
+      "name": "Энди",
+      "surname": "Уир",
+      "image_path": "image/Inoprishilenec/no_kind.png",
+      "professions": [
+        "специалист по радиационной защите",
+        "астрогеолог"
+      ]
+    },
+    {
+      "name": "Марк",
+      "surname": "Уотни",
+      "image_path": "image/Inoprishilenec/kind.png",
+      "professions": [
+        "строитель",
+        "оператор марсохода",
+        "пилот дронов",
+        "экзобиолог"
+      ]
+    }
+  ]
+}
